@@ -1,0 +1,170 @@
+<! DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Online screenshot generator that captures any webpage from different devices using any resolution. Full page screenshots are also supported.">
+    <title>Online website screenshot generator</title>
+    <link rel="canonical" href="https://www.screenshotmachine.com/website-screenshot-generator.php">
+    <!-- Styles -->
+    <link href="assets/css/page.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- preload  data for speed optimization-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Dosis:200,400,500,600" rel="stylesheet">
+    <link href="assets/fonts//fontawesome-webfont.woff2?v=4.7.0" rel="preload" as="font" type="font/woff2" crossorigin="anonymous">
+    <link href="assets/fonts/et-line.woff" rel="preload" as="font" type="font/woff" crossorigin="anonymous">
+    <!-- Favicons -->
+    <link rel="icon" href="assets/img/favicon.png">
+</head>
+
+<body>
+<body style="background-color:Aliceblue;">
+<style>h1 {text-align: center;}</style> 
+
+<h1 style="border: 1px solid black">  Take a screenshot website online <br>An easy way to capture a screenshot of a webpage</br></h1>
+<li>You screen-capture beautiful and high-resolution screenshot images of any web page on the Internet.</li>
+<li>Want to <strong>capture a full web page screenshot</strong>? Submit your link, we convert it to JPG, PDF, or whatever, <strong>online</strong>!</li>
+<li>You will also have the opportunity to download the picture as a ZIP file.</li>
+
+
+<h3><p><strong>Enter the URL to capture</strong></p></h3>
+
+<p align="left "><input title="Enter URL to convert" type="text" name="screenshot_url" size="100" maxlength="1000" id="screenshot_url" class="url center" placeholder="Paste your URL here..."></p>
+
+<p><a href="https://www.google.com/">Visit to your website!</a></p>
+
+<button type="submit" form="nameform" value="Submit">Submit</button>
+
+<h3><p><strong>Choose the file format</strong></p></h3>
+
+<select id="output" name="output">
+				<option value="jpeg">JPEG image</option>
+				<option value="pdf">PDF file</option>
+				<option value="tiff">TIFF image</option>
+								<option value="bmp">BMP image</option>
+				<option value="png">PNG image</option>
+				<option value="ps">Postscript file (PS)</option>
+				<option value="svg">SVG file</option>
+</select>
+
+<div class="row justify-content-center">
+      <div class="col-md-9 main-table">
+        
+        <div class="input-div main-page-input-border">
+          <div class="container-fluid input-div-wrapper">
+
+            <div class="row row-1">
+
+              <div class="col-md-4">
+                <div class="item-wrapper">
+                  <h3 class="main-text-h3-top">Resolution:</h3>
+                  <select class="custom-select" id="inputGroupSelect01" onchange="change_resol_select()">
+					<optgroup label="Desktop">
+						<option>320x240 (QVGA)</option>
+						<option>640x480 (VGA)</option>
+						<option>800x600 (SVGA)</option>
+						<option>1280x720 (HD)</option>
+						<option selected="">1280x1024 (SXGA)</option>
+						<option>1600x900 (HD+)</option>
+						<option>1920x1080 (FHD)</option>
+						<option>2048x1080 (2K)</option>
+						<option>3840x2160 (4K UHD)</option>
+					</optgroup>
+					<optgroup label="Android Devices">
+						<option>360x640 (Galaxy S7/S7edge/S6)</option>
+						<option>360x740 (Galaxy S8/S8+/Note8/S9)</option>
+						<option>360x760 (Galaxy S10)</option>
+						<option>411x731 (Google Pixel, Pixel 2)</option>
+						<option>427x240 (Google Glass)</option>
+						<option>800x1280 (Kindle Fire)</option>
+					</optgroup>
+					<optgroup label="iOS Devices">
+						<option>375x812 (iPhone X, XS)</option>
+						<option>414x736 (iPhone 6+, 6s+, 7+, 8+)</option>
+						<option>414x896 (iPhone XR, iPhone XS Max)</option>
+						<option>768x1024 (iPad 3, 4, Air, Air2, Pro 9.7)</option>
+						<option>1024x1366 (iPad Pro 12.9)</option>
+					</optgroup>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="item-wrapper">
+                  <h3 class="main-text-h3-top">Width:</h3>
+                  <div class="d-flex">
+                    <input class="slider" id="width-input" type="range" min="240" max="10000" step="1" value="1280" oninput="slider('width-input', 'width-input-res')">
+                    <input type="text" id="width-input-res" value="1280" class="slider-res" onchange="slider_res('width-input', 'width-input-res')">
+                  </div> 
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="item-wrapper">
+                  <h3 class="main-text-h3-top">Height:</h3>
+                  <div class="d-flex">
+                    <input class="slider" id="height-input" type="range" min="240" max="10000" step="1" value="1200" oninput="slider('height-input', 'height-input-res')">
+                    <input type="text" id="height-input-res" value="1024" class="slider-res" onchange="slider_res('height-input', 'height-input-res')">
+                  </div>
+                </div>
+              </div>  
+
+            </div>
+
+            <div class="row ">
+			
+              <div class="col-md-4 row-1">
+                <div class="item-wrapper">
+                  <h3 class="main-text-h3-top">Full-size:</h3>
+                  <div>
+                    <label class="switch">
+                      <input type="checkbox" id="full_size" onchange="toggle_full_size()">
+                      <span class="toggle round"></span>
+                    </label>
+                  </div>
+                  
+                </div>
+              </div>
+			  
+              			  
+              <div class="col-md-4 row-1">
+                <div class="item-wrapper">
+                  <h3 class="main-text-h3-top">Zoom:</h3>
+                  <div class="d-flex">
+                    <input class="slider" id="zoom-input" type="range" min="0" max="100" step="1" value="100" oninput="percent_slider('zoom-input', 'zoom-input-res')">
+                    <input type="text" id="zoom-input-res" class="slider-res" value="100%" onchange="percent_slider_res('zoom-input', 'zoom-input-res')">
+                  </div>
+                </div>
+              </div> 
+            </div>
+			
+            <div class="row">
+
+              <div class="col-md-4">
+                <div class="item-wrapper">
+                  <h3 class="main-text-h3-top">Scale:</h3>
+                  <div class="d-flex">
+                    <input class="slider" id="scale-input" type="range" min="0" max="100" step="1" value="100" oninput="percent_slider('scale-input', 'scale-input-res')">
+                    <input type="text" id="scale-input-res" class="slider-res" value="100%" onchange="percent_slider_res('scale-input', 'scale-input-res')">
+                  </div>
+                </div>
+              </div>  
+
+			<p><button class="btn btn-primary create-btn item-wrapper" onclick="create_btn_click()">Capture Screenshot Here</button></p>
+            </div>
+
+            <div class="row justify-content-end">
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>  
+
+    </div>
+</body>
+</html>
